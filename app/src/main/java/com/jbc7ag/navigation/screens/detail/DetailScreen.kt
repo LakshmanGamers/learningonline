@@ -109,7 +109,7 @@ fun Topbar(navController: NavController){
             actions = {
 
 
-                // Creating Icon button for dropdown menu
+
                 IconButton(onClick = {
 
                 }) {
@@ -122,8 +122,7 @@ fun Topbar(navController: NavController){
         )
 
         Tabs(pagerState = pagerState)
-        // on below line we are calling tabs content
-        // for displaying our page for each tab layout
+
         TabsContent(pagerState = pagerState , navController =navController)
 
 
@@ -135,22 +134,15 @@ fun Topbar(navController: NavController){
 @ExperimentalPagerApi
 @Composable
 fun Tabs(pagerState: PagerState) {
-    // in this function we are creating a list
-    // in this list we are specifying data as
-    // name of the tab and the icon for it.
+
     val list = listOf<String>("UPCOMING" , "ONGOING")
-    // on below line we are creating
-    // a variable for the scope.
+
     val scope = rememberCoroutineScope()
-    // on below line we are creating a
-    // individual row for our tab layout.
+
     TabRow(
-        // on below line we are specifying
-        // the selected index.
+
         selectedTabIndex = pagerState.currentPage,
 
-        // on below line we are
-        // specifying background color.
         backgroundColor = MaterialTheme.colors.primary,
 
         // on below line we are specifying content color.
@@ -224,8 +216,6 @@ fun TabsContent(pagerState: PagerState , navController: NavController) {
             // on below line we are calling tab content screen
             // and specifying data as Shopping Screen.
             1 -> Course(navController)
-            // on below line we are calling tab content screen
-            // and specifying data as Settings Screen.
 
         }
     }
@@ -240,7 +230,7 @@ fun Course(navController: NavController){
     LazyVerticalGrid(
 
         cells = GridCells.Fixed(1),
-        // content padding
+
         contentPadding = PaddingValues(
             start = 12.dp,
             top = 16.dp,
@@ -283,10 +273,3 @@ fun Course(navController: NavController){
     )
 }
 
-@ExperimentalFoundationApi
-@OptIn(ExperimentalUnitApi::class)
-@ExperimentalPagerApi
-@Composable
-fun DetailScreenPreview() {
-
-}
